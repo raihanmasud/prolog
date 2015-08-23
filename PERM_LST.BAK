@@ -1,0 +1,28 @@
+domains
+    l=integer*
+    
+predicates
+    del(integer,l,l)
+    insert(integer,l,l)
+    permutation(l,l)
+ 
+clauses
+    del(X,[X|Tail],Tail).
+    del(X,[Y|Tail],[Y|Tail1]):-
+              del(X,Tail,Tail1).
+        
+    insert(X,L1,L2):-
+              del(X,L2,L1).              
+              
+    permutation([],[]).
+    permutation([X|Tail],P):-
+              permutation(Tail,Tail1),
+              insert(X,Tail1,P).       
+              
+              
+Goal
+   permutation([6,3,2,1,4,5,7,8],Result).                 
+   
+   
+   
+   /* permutation([8,5,6,3,2],Result).*/

@@ -1,0 +1,13 @@
+domains
+
+
+predicates
+
+fibo(integer,integer)
+
+
+clauses
+
+
+fibo(N,N1):-
+          N2=N+N1,N2<30,write(N2," "),fibo(N1,N2).    
